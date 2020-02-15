@@ -1,0 +1,71 @@
+service: bamboo
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+  stage: ${opt:stage, 'dev'}
+  region: eu-west-1
+
+
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "dynamoDB:Query"
+        - "dynamoDB:PutItem"
+      Resource:
+        Fn::GetAtt:
+          - myDynamoDBTable
+          - Arn
+
+functions:
+  fetcher:
+    handler: fetcher.fetch
+    events:
+      - schedule: cron(5 0,6,7,8,9 ? * MON-FRI *)
+    environment:
+     BAMBOO_TOKEN: ${file(config.${self:provider.stage}.json):BAMBOO_TOKEN}
+     TABLE: "absent-${self:provider.stage}"
+  absent:
+    handler: handler.absent
+    events:
+      - http:
+          path: absent
+          method: get
+          authorizer:
+            name: authorizer
+            arn: ${file(config.${self:provider.stage}.json):COGNITO}
+    environment:
+     TABLE: "absent-${self:provider.stage}"
+
+resources:
+  Resources:
+    myDynamoDBTable: 
+      Type: AWS::DynamoDB::Table
+      Properties: 
+        AttributeDefinitions: 
+          - 
+            AttributeName: "Id"
+            AttributeType: "S"
+          - 
+            AttributeName: "Absent_Date"
+            AttributeType: "S"
+        KeySchema: 
+          - 
+            AttributeName: "Absent_Date"
+            KeyType: "HASH"
+          - 
+            AttributeName: "Id"
+            KeyType: "RANGE"  
+        ProvisionedThroughput: 
+          ReadCapacityUnits: "1"
+          WriteCapacityUnits: "1"
+        TimeToLiveSpecification:
+          AttributeName: "TTL"
+          Enabled: True
+        TableName: "absent-${self:provider.stage}"
+  Outputs:
+    UsersTableArn:
+      Description: The ARN for the User's Table
+      Value:
+        'Fn::GetAtt': [myDynamoDBTable, Arn]

@@ -3,22 +3,55 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7906D31B23F1D10F0088D664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906D31A23F1D10F0088D664 /* AppDelegate.swift */; };
 		7906D31D23F1D1100088D664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7906D31C23F1D1100088D664 /* Assets.xcassets */; };
-		7906D32023F1D1100088D664 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7906D31E23F1D1100088D664 /* MainMenu.xib */; };
+		7906D32A23F1DB2F0088D664 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906D32923F1DB2F0088D664 /* AuthResponse.swift */; };
+		7906D33C23F1FD930088D664 /* SearchAbsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906D33B23F1FD930088D664 /* SearchAbsentViewController.swift */; };
+		7963D92C23F6C9CE00A230C8 /* Authorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963D92B23F6C9CE00A230C8 /* Authorizer.swift */; };
+		7963D92E23F6D50900A230C8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7963D92D23F6D50900A230C8 /* Security.framework */; };
+		7963D93123F6D73000A230C8 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7963D93023F6D73000A230C8 /* KeychainSwift */; };
+		7963D93423F6E54000A230C8 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 7963D93323F6E54000A230C8 /* JWTDecode */; };
+		7963D94F23F748AD00A230C8 /* CCNStatusItem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7906D33723F1F6C80088D664 /* CCNStatusItem.framework */; };
+		7963D95023F748AD00A230C8 /* CCNStatusItem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7906D33723F1F6C80088D664 /* CCNStatusItem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7966A8B423F68EC400831F25 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 7966A8B323F68EC400831F25 /* HotKey */; };
+		79A3B3E923F7D44B0000CE5B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79A3B3E823F7D44B0000CE5B /* MainMenu.xib */; };
+		79A3CE3823F5B06B00FFA632 /* AbsentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3CE3723F5B06B00FFA632 /* AbsentService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7963D95123F748AD00A230C8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7963D95023F748AD00A230C8 /* CCNStatusItem.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7906D31723F1D10F0088D664 /* Bamboo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bamboo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7906D31A23F1D10F0088D664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7906D31C23F1D1100088D664 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7906D31F23F1D1100088D664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7906D32123F1D1100088D664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7906D32223F1D1100088D664 /* Bamboo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bamboo.entitlements; sourceTree = "<group>"; };
+		7906D32923F1DB2F0088D664 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		7906D33423F1F4740088D664 /* Bamboo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bamboo-Bridging-Header.h"; sourceTree = "<group>"; };
+		7906D33723F1F6C80088D664 /* CCNStatusItem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CCNStatusItem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7906D33B23F1FD930088D664 /* SearchAbsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAbsentViewController.swift; sourceTree = "<group>"; };
+		7963D92B23F6C9CE00A230C8 /* Authorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorizer.swift; sourceTree = "<group>"; };
+		7963D92D23F6D50900A230C8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		79A3B3E823F7D44B0000CE5B /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		79A3B3EB23F7D4A00000CE5B /* Bamboo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bamboo.entitlements; sourceTree = "<group>"; };
+		79A3B3ED23F7F6E00000CE5B /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		79A3CE3723F5B06B00FFA632 /* AbsentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentService.swift; sourceTree = "<group>"; };
+		79D08A0D23F834C4007B7BE6 /* OSLog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OSLog.framework; path = System/Library/Frameworks/OSLog.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +59,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7966A8B423F68EC400831F25 /* HotKey in Frameworks */,
+				7963D92E23F6D50900A230C8 /* Security.framework in Frameworks */,
+				7963D94F23F748AD00A230C8 /* CCNStatusItem.framework in Frameworks */,
+				7963D93123F6D73000A230C8 /* KeychainSwift in Frameworks */,
+				7963D93423F6E54000A230C8 /* JWTDecode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +75,8 @@
 			children = (
 				7906D31923F1D10F0088D664 /* Bamboo */,
 				7906D31823F1D10F0088D664 /* Products */,
+				7906D33123F1F3800088D664 /* Frameworks */,
+				7906D33423F1F4740088D664 /* Bamboo-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,13 +91,52 @@
 		7906D31923F1D10F0088D664 /* Bamboo */ = {
 			isa = PBXGroup;
 			children = (
+				79A3B3EC23F7D5150000CE5B /* Absent */,
+				79A3B3EA23F7D4640000CE5B /* misc */,
+				7906D32823F1DB130088D664 /* Auth */,
 				7906D31A23F1D10F0088D664 /* AppDelegate.swift */,
-				7906D31C23F1D1100088D664 /* Assets.xcassets */,
-				7906D31E23F1D1100088D664 /* MainMenu.xib */,
-				7906D32123F1D1100088D664 /* Info.plist */,
-				7906D32223F1D1100088D664 /* Bamboo.entitlements */,
 			);
 			path = Bamboo;
+			sourceTree = "<group>";
+		};
+		7906D32823F1DB130088D664 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7906D32923F1DB2F0088D664 /* AuthResponse.swift */,
+				7963D92B23F6C9CE00A230C8 /* Authorizer.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		7906D33123F1F3800088D664 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79D08A0D23F834C4007B7BE6 /* OSLog.framework */,
+				7963D92D23F6D50900A230C8 /* Security.framework */,
+				7906D33723F1F6C80088D664 /* CCNStatusItem.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79A3B3EA23F7D4640000CE5B /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				79A3B3E823F7D44B0000CE5B /* MainMenu.xib */,
+				79A3B3EB23F7D4A00000CE5B /* Bamboo.entitlements */,
+				7906D32123F1D1100088D664 /* Info.plist */,
+				7906D31C23F1D1100088D664 /* Assets.xcassets */,
+				79A3B3ED23F7F6E00000CE5B /* Config.xcconfig */,
+			);
+			path = misc;
+			sourceTree = "<group>";
+		};
+		79A3B3EC23F7D5150000CE5B /* Absent */ = {
+			isa = PBXGroup;
+			children = (
+				7906D33B23F1FD930088D664 /* SearchAbsentViewController.swift */,
+				79A3CE3723F5B06B00FFA632 /* AbsentService.swift */,
+			);
+			path = Absent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,12 +149,18 @@
 				7906D31323F1D10F0088D664 /* Sources */,
 				7906D31423F1D10F0088D664 /* Frameworks */,
 				7906D31523F1D10F0088D664 /* Resources */,
+				7963D95123F748AD00A230C8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Bamboo;
+			packageProductDependencies = (
+				7966A8B323F68EC400831F25 /* HotKey */,
+				7963D93023F6D73000A230C8 /* KeychainSwift */,
+				7963D93323F6E54000A230C8 /* JWTDecode */,
+			);
 			productName = Bamboo;
 			productReference = 7906D31723F1D10F0088D664 /* Bamboo.app */;
 			productType = "com.apple.product-type.application";
@@ -87,11 +172,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Marek Mościchowski";
 				TargetAttributes = {
 					7906D31623F1D10F0088D664 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -104,6 +190,11 @@
 				Base,
 			);
 			mainGroup = 7906D30E23F1D10F0088D664;
+			packageReferences = (
+				7966A8B223F68EC400831F25 /* XCRemoteSwiftPackageReference "HotKey" */,
+				7963D92F23F6D73000A230C8 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				7963D93223F6E54000A230C8 /* XCRemoteSwiftPackageReference "JWTDecode.swift" */,
+			);
 			productRefGroup = 7906D31823F1D10F0088D664 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -119,7 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7906D31D23F1D1100088D664 /* Assets.xcassets in Resources */,
-				7906D32023F1D1100088D664 /* MainMenu.xib in Resources */,
+				79A3B3E923F7D44B0000CE5B /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,22 +221,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79A3CE3823F5B06B00FFA632 /* AbsentService.swift in Sources */,
+				7906D33C23F1FD930088D664 /* SearchAbsentViewController.swift in Sources */,
+				7906D32A23F1DB2F0088D664 /* AuthResponse.swift in Sources */,
+				7963D92C23F6C9CE00A230C8 /* Authorizer.swift in Sources */,
 				7906D31B23F1D10F0088D664 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		7906D31E23F1D1100088D664 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7906D31F23F1D1100088D664 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7906D32323F1D1100088D664 /* Debug */ = {
@@ -199,12 +283,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bamboo/Bamboo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -254,47 +339,63 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bamboo/Bamboo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
 		7906D32623F1D1100088D664 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79A3B3ED23F7F6E00000CE5B /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Bamboo/Bamboo.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Bamboo/misc/Bamboo.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Bamboo/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Bamboo/misc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moscichowski.Bamboo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bamboo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		7906D32723F1D1100088D664 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79A3B3ED23F7F6E00000CE5B /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Bamboo/Bamboo.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Bamboo/misc/Bamboo.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Bamboo/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Bamboo/misc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moscichowski.Bamboo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bamboo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -321,6 +422,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7963D92F23F6D73000A230C8 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+		7963D93223F6E54000A230C8 /* XCRemoteSwiftPackageReference "JWTDecode.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
+		7966A8B223F68EC400831F25 /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7963D93023F6D73000A230C8 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7963D92F23F6D73000A230C8 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		7963D93323F6E54000A230C8 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7963D93223F6E54000A230C8 /* XCRemoteSwiftPackageReference "JWTDecode.swift" */;
+			productName = JWTDecode;
+		};
+		7966A8B323F68EC400831F25 /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7966A8B223F68EC400831F25 /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7906D30F23F1D10F0088D664 /* Project object */;
 }
