@@ -21,7 +21,7 @@ module.exports.fetch = async event => {
       }).map(function(absence) {
           return {
             Name: absence.name,
-            Type: absence.type.name,
+            Type: mapAbsenceType(absence.type.name),
             Until: absence.end
           }
       })
@@ -47,3 +47,15 @@ module.exports.fetch = async event => {
     }).auth(bambooToken, 'xD', false);
 });
 };
+
+function mapAbsenceType(type) {
+  if (type == "Work From Home") {
+    return "Remote"
+  } else if (type == "Training") {
+    return "Training"
+  } else if (type == "Business Trip") {
+    return "Business Trip"
+  } else {
+    return "Out of office"
+  }
+}

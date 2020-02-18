@@ -54,16 +54,14 @@ class AbsentService {
 }
 
 enum AbsentType: String, Codable {
-  case Vacation = "Vacation ", WFH = "Work From Home", Training = "Training", other
+  case Business = "Business Trip", WFH = "Remote", Training = "Training", other
   var string: String {
     get {
       switch self {
-      case .Vacation, .other:
+      case .other:
         return "Out of office"
-      case .WFH:
-        return "Remote"
-      case .Training:
-        return "Training"
+      default:
+        return rawValue
       }
     }
   }
