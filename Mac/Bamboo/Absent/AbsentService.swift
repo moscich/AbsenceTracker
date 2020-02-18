@@ -72,16 +72,19 @@ struct Absent: Codable {
   let name: String
   let type: AbsentType
   let until: Date
+  let approved: Bool
   
   enum CodingKeys: String, CodingKey {
     case name
     case type
     case until
+    case approved
   }
   
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
     name = try values.decode(String.self, forKey: .name)
+    approved = try values.decode(Bool.self, forKey: .approved)
     type = AbsentType(rawValue: try values.decode(String.self, forKey: .type)) ?? .other
     let stringDate = try values.decode(String.self, forKey: .until)
     let RFC3339DateFormatter = DateFormatter()

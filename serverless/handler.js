@@ -35,7 +35,7 @@ module.exports.absent = async event => {
         }
 
         const items = res.Items[0].Absent.map(function(item) {
-          return {name: item["Name"], type: item["Type"], until: item["Until"]}
+          return {name: item["Name"], type: item["Type"], until: item["Until"], approved: item["Approved"]}
         })
         resolve({statusCode: 200, body: JSON.stringify(items)})
       } else {

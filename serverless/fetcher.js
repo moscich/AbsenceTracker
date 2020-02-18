@@ -22,6 +22,7 @@ module.exports.fetch = async event => {
           return {
             Name: absence.name,
             Type: mapAbsenceType(absence.type.name),
+            Approved: absence.status.status == "approved",
             Until: absence.end
           }
       })

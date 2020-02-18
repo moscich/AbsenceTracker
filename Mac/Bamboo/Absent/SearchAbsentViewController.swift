@@ -1,4 +1,5 @@
 import Foundation
+import AppKit
 
 class SearchAbsentViewController: NSViewController {
   let search = NSSearchField()
@@ -133,6 +134,11 @@ extension SearchAbsentViewController: NSTableViewDataSource, NSTableViewDelegate
     case NSUserInterfaceItemIdentifier("Type"): cell.stringValue = filtered[row].type.string
     case NSUserInterfaceItemIdentifier("Until"): cell.stringValue = RFC3339DateFormatter.string(from: filtered[row].until)
     default: break
+    }
+    if filtered[row].approved {
+      cell.textColor = .white
+    } else {
+      cell.textColor = .gray
     }
     return cell
   }
