@@ -34,7 +34,7 @@ module.exports.fetch = async event => {
           Absent_Date: today,
           Absent: mapped,
           Id: + now + "",
-          TTL: 24*60*60 + (+ (new Date()))
+          TTL: 24*60*60 + Math.floor(new Date()/1000)
         }
       }
 
