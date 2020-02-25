@@ -26,6 +26,7 @@ functions:
     environment:
      BAMBOO_TOKEN: ${file(config.${self:provider.stage}.json):BAMBOO_TOKEN}
      TABLE: "absent-${self:provider.stage}"
+     COMPANY: ${file(config.${self:provider.stage}.json):COMPANY}
   absent:
     handler: handler.absent
     events:

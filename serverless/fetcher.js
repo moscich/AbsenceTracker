@@ -9,11 +9,12 @@ const AWS = require("aws-sdk");
 module.exports.fetch = async event => {
   const now = new Date();
   const bambooToken = process.env.BAMBOO_TOKEN
+  const company = process.env.COMPANY
   const table = process.env.TABLE
   const today = dateFormat(now, "yyyy-mm-dd")
   return new Promise(function(resolve, reject) {
 
-    request.get('https://api.bamboohr.com/api/gateway.php/miquido/v1/time_off/requests?start=' + today + '&end=' + today, { json: true }, (err, res, body) => {
+    request.get('https://api.bamboohr.com/api/gateway.php/' + company + '/v1/time_off/requests?start=' + today + '&end=' + today, { json: true }, (err, res, body) => {
       if (err) { return console.log(err); }
 
       const mapped = body.filter(function(absence) {
