@@ -3,7 +3,8 @@ import Foundation
 class AbsentService {
   var cache: (Date, [Absent])?
   let authorizer = Authorizer()
-    
+  let favSorter = FavoriteSorter()
+  
   private let absentURL = Bundle.main.infoDictionary!["ABSENT_URL"]! as! String
     
   func getAbsent(allowUIAuth: Bool, callback: @escaping (([Absent]) -> Void)) {
@@ -41,7 +42,8 @@ class AbsentService {
           self.getAbsent(allowUIAuth: allowUIAuth, callback: callback)
         }
       } else {
-        let absent = try! JSONDecoder().decode([Absent].self, from: data!)
+        var absent = try! JSONDecoder().decode([Absent].self, from: data!)
+        absent = self.favSorter.sort(list: absent)
         self.cache = (Date(), absent)
         DispatchQueue.main.sync{
           callback(absent)

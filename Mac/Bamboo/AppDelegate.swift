@@ -9,12 +9,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let hotKey = HotKey(key: .b, modifiers: [.command, .shift])
   
   func applicationDidFinishLaunching(_ aNotification: Notification) {
+    if let dir = FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).first {
+      do {
+        try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true, attributes: nil)
+        let dict = NSMutableDictionary()
+        dict["Favorites"] = ["Example"]
+        if (!FileManager.default.fileExists(atPath: dir.appendingPathComponent("preferences.plist").absoluteString)) {
+          dict.write(to: dir.appendingPathComponent("preferences.plist"), atomically: true)
+        }
+      }
+      catch {
+        print(error)
+      }
+    }
+    
     hotKey.keyDownHandler = {
       CCNStatusItem.sharedInstance().showWindow()
     }
     let aem = NSAppleEventManager.shared();
     aem.setEventHandler(self, andSelector: #selector(AppDelegate.handleGetURLEvent(event:replyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
-    
+
     vc.preferredContentSize = CGSize(width: 320, height: 200)
     CCNStatusItem.sharedInstance().present(with: NSImage(named: NSImage.Name("icon")), contentViewController: vc)
   }
