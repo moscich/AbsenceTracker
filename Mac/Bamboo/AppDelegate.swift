@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true, attributes: nil)
         let dict = NSMutableDictionary()
         dict["Favorites"] = ["Example"]
-        if (!FileManager.default.fileExists(atPath: dir.appendingPathComponent("preferences.plist").absoluteString)) {
+        if (!FileManager.default.fileExists(atPath: dir.appendingPathComponent("preferences.plist").path)) {
           dict.write(to: dir.appendingPathComponent("preferences.plist"), atomically: true)
         }
       }
