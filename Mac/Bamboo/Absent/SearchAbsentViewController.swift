@@ -135,8 +135,11 @@ extension SearchAbsentViewController: NSTableViewDataSource, NSTableViewDelegate
     case NSUserInterfaceItemIdentifier("Until"): cell.stringValue = RFC3339DateFormatter.string(from: filtered[row].until)
     default: break
     }
+    
+    let darkMode = UserDefaults.standard.string(forKey: "AppleInterfaceStyle")
+    
     if filtered[row].approved {
-      cell.textColor = .white
+      cell.textColor = darkMode == nil ? .black : .white
     } else {
       cell.textColor = .gray
     }
