@@ -124,6 +124,8 @@ class Authorizer {
           keychain.set(token, forKey: self.refreshTokenId)
           
         } catch {
+          let keychain = KeychainSwift()
+          keychain.delete(self.refreshTokenId)
         }
         
         DispatchQueue.main.sync{
